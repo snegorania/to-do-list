@@ -1,0 +1,64 @@
+.task-wrapper {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.task-name {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 40px;
+    padding-left: 20px;
+    border: 1px solid black;
+}
+
+.checkbox-style {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+}
+
+.task-heading {
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+.task-info {
+    padding-left: 20px;
+    background-color: #ECECEC;
+    width: 480px;
+    height: 200px;
+    transition: height 1s, font-size 1s;
+}
+
+.hidden{
+    height: 0;
+    font-size: 0;
+}
+
+.arrow-image-style {
+    width: 15px;
+    height: 15px;
+}
+
+.button-arrow-style {
+    padding: 0;
+    border: none;
+    font: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 20px;
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+}
+
+.arrow-animation {
+    transform: rotate(0deg);
+}
+
+/*.button-arrow-style:hover {}*/

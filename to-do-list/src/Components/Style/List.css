@@ -1,0 +1,36 @@
+.list-name-flex-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.list-wrapper {
+    margin-left: 40px;
+}
+
+.arrow-image-style-list {
+    width: 15px;
+    height: 15px;
+}
+
+.button-arrow-style-list {
+    padding: 0;
+    border: none;
+    font: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 20px;
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+}
+
+.list-header {
+    font-weight: 400;
+}
+
+.line {
+    width: 600px;
+}
+
+.list-info {
+    margin-left: 20px;
+}
