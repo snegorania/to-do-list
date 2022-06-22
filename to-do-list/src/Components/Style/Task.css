@@ -55,6 +55,7 @@
     margin: 20px;
     transform: rotate(90deg);
     transition: transform 0.5s;
+    z-index: 0;
 }
 
 .arrow-animation {

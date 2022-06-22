@@ -21,6 +21,7 @@
     margin: 20px;
     transform: rotate(90deg);
     transition: transform 0.5s;
+    z-index: 0;
 }
 
 .list-header {
@@ -33,4 +34,10 @@
 
 .list-info {
     margin-left: 20px;
+}
+
+.task{
+    width: 0px;
+    height: 0px;
+    font-size: 0px;
 }
