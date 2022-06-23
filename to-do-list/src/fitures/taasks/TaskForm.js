@@ -36,8 +36,8 @@ function TaskForm(props) {
             )
             setTitle('');
             setDescription('');
-            setCloseForm(true);
         }
+        setCloseForm(true);
     }
 
     return(

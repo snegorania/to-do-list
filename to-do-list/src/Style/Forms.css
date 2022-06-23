@@ -120,3 +120,19 @@
     background-color:black;
     color:#FFFFFF;
 }
+
+.user-form-button {
+    margin-left:20px;
+    height: 40px;
+    width: 80px;
+    background-color: #000000;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    color:#FFFFFF;
+    font-size: 15px;
+}
+
+.user-form-button:hover {
+    background-color:#FFFFFF;
+    color:#000000;
+}

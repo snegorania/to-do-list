@@ -1,0 +1,18 @@
+.header {
+    height: 100px;
+    background-color: #000000;
+    display:flex;
+    align-items: center;
+
+}
+
+.logo {
+    margin-left:50px;
+    color: #FFFFFF;
+    font-size: 30px;
+}
+
+.buttons {
+    margin-left:1050px;
+    display:flex;
+}

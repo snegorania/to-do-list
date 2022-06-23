@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./../Style/Forms.css";
+import "../../Style/Forms.css";
 import { useDispatch } from 'react-redux';
 import { userFind } from './usersSlice';
 
@@ -25,13 +25,15 @@ function UserLogInForm() {
                     password
                 })
             );
-            setCloseForm(true);
+            setUserName('');
+            setPassword('');
         }
+        setCloseForm(true);
     }
 
     return(
         <>
-            <button onClick={handleClick}>Log in</button>
+            <button className="user-form-button" onClick={handleClick}>Log in</button>
             {
                 closeForm ?
                 null :

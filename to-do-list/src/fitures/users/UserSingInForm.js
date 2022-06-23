@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./../Style/Forms.css";
+import "../../Style/Forms.css";
 import { useDispatch } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 import { userAdded } from './usersSlice'
@@ -27,13 +27,13 @@ function UserSingInForm() {
                     password
                 })
             );
-            setCloseForm(true);
         }
+        setCloseForm(true);
     }
 
     return(
         <>
-            <button onClick={handleClick}>Sing in</button>
+            <button className="user-form-button" onClick={handleClick}>Sing in</button>
             {
                 (closeForm) ?
                 null :

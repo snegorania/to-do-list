@@ -19,5 +19,6 @@ const usersSlice = createSlice({
 });
 
 export const { userAdded } = usersSlice.actions;
+export const { userFind } = usersSlice.actions;
 
 export default usersSlice.reducer;
