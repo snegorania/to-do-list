@@ -1,14 +1,13 @@
 import React from 'react';
-import './App.css';
-import Header from './Components/Header';
-import Main from './Components/Main';
+import ListForm from './fitures/lists/ListForm';
+import ListOfLists from './fitures/lists/ListOfLists';
 
 
 function App() {
   return (
     <>
-    <Header/>
-    <Main />
+      <ListForm />
+      <ListOfLists/>
     </>
   );
 }

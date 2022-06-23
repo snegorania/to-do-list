@@ -107,3 +107,16 @@
     color:#FFFFFF;
 }
 
+.task-list-add-button {
+    height: 40px;
+    width: 80px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: background-color 0.5, color 0.5;   
+}
+
+.task-list-add-button:hover {
+    background-color:black;
+    color:#FFFFFF;
+}

@@ -39,6 +39,7 @@
 .hidden{
     height: 0;
     font-size: 0;
+    transition: height 1s, font-size 1s;
 }
 
 .arrow-image-style {
@@ -60,6 +61,7 @@
 
 .arrow-animation {
     transform: rotate(0deg);
+    transition: transform 0.5s;
 }
 
 /*.button-arrow-style:hover {}*/

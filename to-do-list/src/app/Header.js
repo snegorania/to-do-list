@@ -1,6 +1,6 @@
 import React from "react";
-import UserLogInForm from "./UserLogInForm";
-import UserSingInForm from "./UserSingInForm";
+import UserLogInForm from "../Components/UserLogInForm";
+import UserSingInForm from "../Components/UserSingInForm";
 
 
 class Header extends React.Component {
