@@ -21,8 +21,8 @@ function TaskForm(props) {
 
     const dispatch = useDispatch();
 
-    const onChangeTitle = e => setTitle(e.value.target);
-    const onChangeDescription = e => setDescription(e.value.target);
+    const onChangeTitle = e => setTitle(e.target.value);
+    const onChangeDescription = e => setDescription(e.target.value);
 
     function onSave() {
         if (title && description) {

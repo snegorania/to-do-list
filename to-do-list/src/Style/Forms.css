@@ -31,15 +31,6 @@
     backdrop-filter: blur(2px);
 }
 
-.hidden {
-    width: 0px;
-    height: 0px;
-    font-size: 0px;
-    margin: 0 0;
-    padding: 0 0;
-    opacity: 0;
-}
-
 .form-fieldset {
     background-color: #FFFFFF;
     width: 400px;
@@ -135,4 +126,105 @@
 .user-form-button:hover {
     background-color:#FFFFFF;
     color:#000000;
+}
+
+@media screen and (max-width: 420px) {
+    .form {
+        font-size: 15px;
+        position: absolute;
+        top: 20vh;
+        left: 10vw;
+        z-index: 50;
+    }
+    
+    .form-task {
+        font-size: 15px;
+        position: absolute;
+        top: 15vh;
+        left: 10vw;
+        z-index: 50;
+    }
+    
+    .form-list {
+        font-size: 15px;
+        position: absolute;
+        top: 20vh;
+        left: 10vw;
+        z-index: 50;
+    }
+
+    .form-fieldset {
+        background-color: #FFFFFF;
+        width: 30vw;
+        border-radius: 10px;
+    }
+    
+    .wrapper {
+        width: 70vw;
+        margin: 5px auto;
+    }
+
+    .form-header {
+        padding-top: 15px;
+        font-size: 20px;
+        text-align: center;
+        width:60vw;
+        height: 7vh;
+        color: #FFFFFF;
+        background-color: black;
+        border-radius: 7px;
+    }
+
+    .input {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: block;
+        width: 65vw;
+        height: 5vh;
+        font-size: 15px;
+    }
+    
+    .input-textarea {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: block;
+        width: 65vw;
+        height: 15vh;
+        font-size: 15px;
+        letter-spacing: 0px;
+    }
+    
+    .input-date {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: block;
+        width: 55vw;
+        height: 7vh;
+        font-size: 15px;
+    }
+
+    .submit {
+        margin-top: 20px;
+        margin-left: 50vw;
+        display:block;
+        font-size: 10px;
+        background-color: #FFFFFF;
+        height: 30px;
+        width: 55px;
+        border-radius: 10px;
+        transition: background-color 0.5, color 0.5;
+    }
+
+    .task-list-add-button {
+        height: 30px;
+        width: 60px;
+        font-size: 10px;  
+    }
+    
+    .user-form-button {
+        margin-left: 0.5vw;
+        height: 30px;
+        width: 55px;
+        font-size: 10px;
+    }
 }

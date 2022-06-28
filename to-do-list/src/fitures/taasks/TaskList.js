@@ -13,7 +13,7 @@ const TaskList = (props) => {
     const tasksFiltered = tasks.filter((el) => el.listId === list);
 
     const renderedTasks = tasksFiltered.map(task => (
-        <Task title={task.title} description={task.description}/>
+        <Task list={task.list} id={task.id} title={task.title} description={task.description}/>
     ));
 
     return (

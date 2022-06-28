@@ -13,10 +13,16 @@ const tasksSlice = createSlice({
     reducers: {
         taskAdded(state, action) {
             state.push(action.payload);
+        },
+
+        taskDone(state, action) {
+            const i = state.indexOf(action.payload);
+            state.splice(i, 1);
         }
     }
 })
 
 export const {taskAdded} = tasksSlice.actions;
+export const {taskDone} = tasksSlice.actions;
 
 export default tasksSlice.reducer;
