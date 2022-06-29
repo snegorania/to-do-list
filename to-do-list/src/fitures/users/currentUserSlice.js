@@ -3,13 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const currentUserSlice = createSlice({
     name: 'currentUser',
     initialState: {
-        id: '2',
-        userName: '1',
-        password: '1'
+        id: '1'
     },
     reducers: {
         currentUserSetted(state, action) {
-            state = action.payload
+            state.id = action.payload
         }
     }
 });

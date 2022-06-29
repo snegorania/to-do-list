@@ -27,7 +27,9 @@ function UserLogInForm() {
                 })
             );
             dispatch(
-                currentUserSetted(user)
+                currentUserSetted({
+                    id: user.id
+                })
             )
             setUserName('');
             setPassword('');

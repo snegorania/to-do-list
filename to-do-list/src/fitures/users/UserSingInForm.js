@@ -18,19 +18,22 @@ function UserSingInForm() {
 
     const userNameOnChange = e => setUserName(e.target.value);
     const passwordOnChange = e => setPassword(e.target.value);
+    
+    const id = nanoid();
 
     function onSave() {
         if (userName && password) {
-            const user = {
-                id: nanoid(),
-                userName,
-                password
-            };
             dispatch(
-                userAdded(user)
+                userAdded({
+                    id,
+                    userName,
+                    password
+                })
             );
             dispatch(
-                currentUserSetted(user)
+                currentUserSetted({
+                    id
+                })
             );
             setUserName('');
             setPassword('');
