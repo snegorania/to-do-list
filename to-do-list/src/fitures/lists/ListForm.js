@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../Style/Forms.css";
 import { useDispatch } from 'react-redux';
+import { useSelector } from "react-redux";
 import { nanoid } from '@reduxjs/toolkit';
 import { listAdded } from './listsSlice';
 
@@ -14,6 +15,8 @@ function ListForm() {
         setCloseForm(false);
     }
 
+    const user = useSelector(state => state.currentUser);
+
     const dispatch = useDispatch();
 
     const onChangeTitle = e => setTitle(e.target.value);
@@ -25,7 +28,8 @@ function ListForm() {
                 listAdded({
                     id: nanoid(),
                     title,
-                    description
+                    description,
+                    userId: user.id
                 })
             )
             setTitle('');

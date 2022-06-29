@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "../../Style/Forms.css";
 import { useDispatch } from 'react-redux';
 import { userFind } from './usersSlice';
+import { currentUserSetted } from './currentUserSlice';
 
 function UserLogInForm() {
     const [closeForm, setCloseForm] = useState(true);
@@ -19,12 +20,15 @@ function UserLogInForm() {
 
     function submit() {
         if (userName && password) {
-            dispatch(
+           const user = dispatch(
                 userFind({
                     userName,
                     password
                 })
             );
+            dispatch(
+                currentUserSetted(user)
+            )
             setUserName('');
             setPassword('');
         }

@@ -13,7 +13,7 @@ const usersSlice = createSlice({
         },
         
         userFind(state, action) {
-            state.find(el => el === action.payload.userName && el === action.payload.password);
+           return state.find(el => el === action.payload.userName && el === action.payload.password);
         }
     }
 });

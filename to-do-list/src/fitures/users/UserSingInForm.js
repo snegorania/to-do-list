@@ -3,39 +3,46 @@ import "../../Style/Forms.css";
 import { useDispatch } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 import { userAdded } from './usersSlice'
+import { currentUserSetted } from './currentUserSlice'
 
 function UserSingInForm() {
-    const [closeForm, setCloseForm] = useState(true);
+    const [isClosedForm, setIsClosedForm] = useState(true);
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
     function handleClick() {
-        setCloseForm(false);
+        setIsClosedForm(false);
     }
 
     const dispatch = useDispatch();
 
-    const userNameOnChange = e => setUserName(e.value.target);
-    const passwordOnChange = e => setPassword(e.value.target);
+    const userNameOnChange = e => setUserName(e.target.value);
+    const passwordOnChange = e => setPassword(e.target.value);
 
     function onSave() {
         if (userName && password) {
+            const user = {
+                id: nanoid(),
+                userName,
+                password
+            };
             dispatch(
-                userAdded({
-                    id: nanoid(),
-                    userName,
-                    password
-                })
+                userAdded(user)
             );
+            dispatch(
+                currentUserSetted(user)
+            );
+            setUserName('');
+            setPassword('');
+            setIsClosedForm(true);
         }
-        setCloseForm(true);
     }
 
     return(
         <>
             <button className="user-form-button" onClick={handleClick}>Sing in</button>
             {
-                (closeForm) ?
+                (isClosedForm) ?
                 null :
                 <div>
                     <div className="blur"></div>

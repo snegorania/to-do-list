@@ -5,9 +5,13 @@ import List from './List'
 
 const ListOfLists = () => {
     const lists = useSelector(state => state.lists);
-    const renderedLists = lists.map(list => (
+    const currentUser = useSelector(state => state.currentUser);
+
+    const listsFiltered = lists.filter((el) => el.userId === currentUser.id);
+
+    const renderedLists = listsFiltered.map(list => (
         <List id={list.id} title={list.title} description={list.description} />
-    ))
+    ));
 
     return(
         <>
