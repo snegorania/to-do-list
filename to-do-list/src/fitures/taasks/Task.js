@@ -61,8 +61,6 @@ function Task(props) {
             <div className={classTaskInfo}>
                 <h4>Description:</h4>
                 <p>{description}</p>
-                <h4>Date:</h4>
-                <p>Date</p>
             </div>
         </div>
     );
