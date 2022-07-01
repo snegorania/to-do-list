@@ -1,0 +1,54 @@
+
+.header {
+    height: 7vw;
+    background-color: #000000;
+    display:flex;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 5vw;
+    color: #FFFFFF;
+    font-size: 30px;
+}
+
+.buttons {
+    margin-left:65vw;
+    display:flex;
+}
+
+.wrapper{
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .buttons {
+        margin-left:55vw;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .header {
+        height: 20vw;
+    }
+
+    .buttons {
+        margin-left: 30vw;
+    }
+    .logo {
+        margin-left: 5vw;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .buttons {
+        margin-left: 20vw;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .buttons {
+        margin-left: 15vw;
+    }
+}
