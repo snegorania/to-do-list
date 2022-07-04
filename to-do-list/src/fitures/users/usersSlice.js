@@ -1,19 +1,19 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // set initial state
 const initialState = [
-  { id: "1", userName: "Alex", password: "gggg" },
-  { id: "2", userName: "root", password: "root" },
+  { id: '1', userName: 'Alex', password: 'gggg' },
+  { id: '2', userName: 'root', password: 'root' },
 ];
 
-export const fetchUsers = createAsyncThunk("users/getAkk", async () => {
-  const res = await fetch("http://localhost:8080/api/user");
+export const fetchUsers = createAsyncThunk('users/getAkk', async () => {
+  const res = await fetch('http://localhost:8080/api/user');
   return res.json();
 });
 
 // create user slice
 const usersSlice = createSlice({
-  name: "users",
+  name: 'users',
   initialState,
   reducers: {
     // add user
