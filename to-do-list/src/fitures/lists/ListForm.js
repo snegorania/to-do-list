@@ -1,3 +1,5 @@
+// imports react, useState hook, styles, useDispatch hook, useSelector hook,
+// nanoid function and listAdded action
 import React, { useState } from "react";
 import "../../Style/Forms.css";
 import { useDispatch } from 'react-redux';
@@ -5,23 +7,32 @@ import { useSelector } from "react-redux";
 import { nanoid } from '@reduxjs/toolkit';
 import { listAdded } from './listsSlice';
 
+// function of list component
 function ListForm() {
 
+    // state of component
     const [closeForm, setCloseForm] = useState(true);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
+    // opens form when you click on form button
     function handleClick() {
         setCloseForm(false);
     }
 
+    // get current user from state
     const user = useSelector(state => state.currentUser);
 
+    // make dispatch object
     const dispatch = useDispatch();
 
+    // get values from input
     const onChangeTitle = e => setTitle(e.target.value);
     const onChangeDescription = e => setDescription(e.target.value); 
 
+    // this function happens when you click submit button
+    // it checks is there anything in form inputs
+    // if there is something it add new list, clean input and close form 
     function onSave() {
         if (title && description) {
             dispatch(
@@ -34,10 +45,13 @@ function ListForm() {
             )
             setTitle('');
             setDescription('');
+            setCloseForm(true);
         }
-        setCloseForm(true);
     }
 
+
+    // returns form component
+    // form opens when you click form button
     return(
         <>
             <button className="user-form-button" onClick={handleClick}>Add List</button>

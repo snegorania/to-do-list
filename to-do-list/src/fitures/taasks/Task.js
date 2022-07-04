@@ -1,11 +1,15 @@
+// import react, useState hook, useEffect hook, styles, arrow picture, 
+// useDispatch hook, taskDone action
 import React, { useState, useEffect } from "react";
 import "../../Style/Task.css"
 import arrow from "../../assets/arrow.png"
 import { useDispatch } from "react-redux";
-import {taskDone} from './tasksSlice';
+import { taskDone } from './tasksSlice';
 
+// function of task component
 function Task(props) {
 
+    // state of component
     const [classButton, setClassButton] = useState('button-arrow-style arrow-animation');
     const [classTaskInfo, setClassTaskInfo] = useState('task-info hidden');
     const [counter, setCounter] = useState(0);
@@ -14,6 +18,7 @@ function Task(props) {
     const [id, setId] = useState();
     const [list, setList] = useState();
 
+    // set state from props
     useEffect(() => {
         setDescription(props.description);
         setTitle(props.title);
@@ -21,8 +26,11 @@ function Task(props) {
         setList(props.list);
     })
 
+    // make dispatch object
     const dispatch = useDispatch();
 
+    // check is task checked or not
+    // if task checked delete task
     function handleTaskDone(e) {
         if (e.target.checked) {
             dispatch(
@@ -36,6 +44,7 @@ function Task(props) {
         }
     }
 
+    // open task description
     function handleClick() {
         if (counter === 0) {
             setClassButton('button-arrow-style');
@@ -48,7 +57,7 @@ function Task(props) {
         }
     }
 
-
+    // return task component
     return(
         <div className="task-wrapper">
             <div className = "task-name">

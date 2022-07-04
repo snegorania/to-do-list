@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Style/Styles.css';
 
+// returns little landing page
 function LittleLanding() {
     return(
         <div>

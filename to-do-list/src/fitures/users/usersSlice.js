@@ -1,20 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// set initial state
 const initialState = [
     {id: '1', userName: 'Alex', password: 'gggg'},
     {id: '2', userName: 'root', password: 'root'}
 ];
 
+// create user slice
 const usersSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
+        // add user
         userAdded(state, action) {
             state.push(action.payload);
-        },
-        
-        userFind(state, action) {
-           return state.find(el => el === action.payload.userName && el === action.payload.password);
         }
     }
 });
