@@ -3,6 +3,7 @@ const express = require('express');
 const userRouter = require('./routers/userRouts');
 const listRouter = require('./routers/listRouts');
 const taskRouter = require('./routers/taskRouts');
+const cors=require("cors");
 
 // ask for port
 const PORT = process.env.PORT || 8080;
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 8080;
 // init app
 const app = express();
 
+app.use(cors());
 // helps express to understand json
 app.use(express.json());
 // send routers to /api address

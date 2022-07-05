@@ -36,7 +36,7 @@ function UserLogInForm() {
     // if it exist set this user as current user, clean input and close form
     function submit() {
         if (userName && password) {
-            const user = users.find(el => el.password === password && el.userName === userName);
+            const user = users.users.find(el => el.password === password && el.userName === userName);
             console.log(user);
             if(user !== undefined) {
                 dispatch(

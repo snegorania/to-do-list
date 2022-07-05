@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import "../../Style/Forms.css";
 import { useDispatch } from 'react-redux';
 import { useSelector } from "react-redux";
-import { nanoid } from '@reduxjs/toolkit';
-import { listAdded } from './listsSlice';
+import { addList } from './listsSlice';
 
 // function of list component
 function ListForm() {
@@ -36,16 +35,17 @@ function ListForm() {
     function onSave() {
         if (title && description) {
             dispatch(
-                listAdded({
-                    id: nanoid(),
+                addList({
                     title,
                     description,
                     userId: user.id
                 })
-            )
-            setTitle('');
-            setDescription('');
-            setCloseForm(true);
+            );
+            setTimeout(() => {
+                setTitle('');
+                setDescription('');
+                setCloseForm(true);
+            }, 3000);
         }
     }
 

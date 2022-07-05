@@ -2,9 +2,8 @@
 // userAdded action and currentUserSet action
 import React, {useState} from "react";
 import "../../Style/Forms.css";
-import { useDispatch } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
-import { userAdded } from './usersSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser } from './usersSlice';
 import { currentUserSet } from './currentUserSlice';
 import { useNavigate } from 'react-router-dom';
 
@@ -28,10 +27,9 @@ function UserSingInForm() {
 
     //  read what user enters to form
     const userNameOnChange = e => setUserName(e.target.value);
-    const passwordOnChange = e => setPassword(e.target.value);
-    
-    // get id from nanoid
-    const id = nanoid();
+    const passwordOnChange = e => setPassword(e.target.value); 
+
+    const users = useSelector(state => state.users);
 
     // this function work when you click on submit button
     // it checks is something written to form inputs
@@ -40,15 +38,15 @@ function UserSingInForm() {
     function onSave() {
         if (userName && password) {
             dispatch(
-                userAdded({
-                    id,
+                addUser({
                     userName,
                     password
                 })
             );
+            const current = users.users.find(el => userName === el.useName && password === el.password);
             dispatch(
                 currentUserSet({
-                    id
+                    id: current.id
                 })
             );
             setUserName('');

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import "../../Style/Task.css"
 import arrow from "../../assets/arrow.png"
 import { useDispatch } from "react-redux";
-import { taskDone } from './tasksSlice';
+import { deleteTask } from './tasksSlice';
 
 // function of task component
 function Task(props) {
@@ -34,7 +34,7 @@ function Task(props) {
     function handleTaskDone(e) {
         if (e.target.checked) {
             dispatch(
-                taskDone({
+                deleteTask({
                     id,
                     title,
                     description,

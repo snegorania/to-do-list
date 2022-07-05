@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import "../../Style/Forms.css";
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { taskAdded } from './tasksSlice';
+import { addTask } from './tasksSlice';
 
 // task component function
 function TaskForm(props) {
@@ -38,8 +38,7 @@ function TaskForm(props) {
     function onSave() {
         if (title && description) {
             dispatch(
-                taskAdded({
-                    id: nanoid(),
+                addTask({
                     title,
                     description,
                     listId
